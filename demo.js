@@ -4,12 +4,31 @@
 // →	Rightwards Arrow	26
 // ←	Leftwards Arrow	27
 
+var x = 300,
+      y = 0,
+      
+      velX = 0,
+      velY = 0,
+      thrust = 5;
+  
+  var blue = document.getElementById("blue");
+
+  // green.style.left = targetX;
+  // green.style.top = targetY;
+
+  blue.style.left = x;
+  blue.style.top = y;
+
+
 var character = document.getElementsByTagName("img")[0];
+
+targetX = character.offsetLeft
+targetY = character.offsetTop
 
 var speed  = 10;
 var goRigth = speed;
 var goDown = speed;
-token = "0";
+
 document.addEventListener('keydown', function(e) {
     console.log(e.code);
       if(e.code === "ArrowRight" && goRigth < 1275){
@@ -29,6 +48,11 @@ document.addEventListener('keydown', function(e) {
       }
       character.style.left = goRigth + "px";
       character.style.top = goDown +"px";
+
+      targetX = character.offsetLeft
+      targetY = character.offsetTop
+
+      
       if(goRigth === 1000)
       {
           goRigth -=5 ;
@@ -67,6 +91,52 @@ var count;
           
 
   }
+
+  
+
+  function draw(){   
+    var tx = targetX - x,
+        ty = targetY - y,
+        dist = Math.sqrt(tx*tx+ty*ty),        
+
+    
+      velX = (tx/dist)*thrust;
+      velY = (ty/dist)*thrust;
+    
+    if(dist > 10){
+      x += velX;
+      y += velY;
+    }
+
+    blue.style.left = x + 'px';
+    blue.style.top = y + 'px';
+
+    // green.style.left = targetX + 'px';
+    // green.style.top = targetY + 'px';    
+    
+    setTimeout(function(){draw()}, 30);   
+}
+
+draw();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // var food = function (){
   //   var num = 1;
   //   var x = getRandomInt(1400);
