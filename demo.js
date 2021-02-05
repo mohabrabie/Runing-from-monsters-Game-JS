@@ -12,18 +12,20 @@ var goDown = speed;
 token = "0";
 document.addEventListener('keydown', function(e) {
     console.log(e.code);
-      if(e.code === "ArrowRight"){
+      if(e.code === "ArrowRight" && goRigth < 1275){
         changeImge("right");
         goRigth+=speed;
-      }else if(e.code === "ArrowLeft"){
+        
+      }else if(e.code === "ArrowLeft" && goRigth > -30){
         changeImge("left");
         goRigth-=speed;
-      }else if(e.code === "ArrowUp"){
+        console.log(goRigth);
+      }else if(e.code === "ArrowUp" && goDown > -30){
         changeImge("top");
         goDown-=speed;
-      }else if(e.code === "ArrowDown"){
+      }else if(e.code === "ArrowDown" && goDown < 540){
         changeImge("down");
-        goDown+=speed;
+        goDown+=speed;        
       }
       character.style.left = goRigth + "px";
       character.style.top = goDown +"px";
@@ -45,7 +47,7 @@ var count;
       }else if(dir === "left" && count !==2){
         character.src = "gif/left.gif";
         count = 2;
-      }else if(dir === "top" && count !=3){
+      }else if(dir === "top" && count !==3){
         character.src = "gif/top.gif";
         count = 3;
     }else if(dir === "down" && count !==4){
@@ -65,20 +67,20 @@ var count;
           
 
   }
-  var food = function (){
-    var num = 1;
-    var x = getRandomInt(1400);
-    var y = getRandomInt(1000);
-    var foo = document.getElementById("food");
-    foo.src = `url("food/"${num}".jpg")`;
-    foo.style.position = "relative";
-    foo.style.left = x + "px";
-    foo.style.bottom = y + "px";
-    num++;
+  // var food = function (){
+  //   var num = 1;
+  //   var x = getRandomInt(1400);
+  //   var y = getRandomInt(1000);
+  //   var foo = document.getElementById("food");
+  //   foo.src = `url("food/"${num}".jpg")`;
+  //   foo.style.position = "relative";
+  //   foo.style.left = x + "px";
+  //   foo.style.bottom = y + "px";
+  //   num++;
 
-  }
-  setInterval(food,5000);
+  // }
+  // setInterval(food,5000);
 
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
-  }
+  // function getRandomInt(max) {
+  //   return Math.floor(Math.random() * Math.floor(max));
+  // }
