@@ -26,19 +26,19 @@ targetX = character.offsetLeft
 targetY = character.offsetTop
 
 var speed  = 10;
-var goRigth = speed;
+var goRight = speed;
 var goDown = speed;
 
 document.addEventListener('keydown', function(e) {
     console.log(e.code);
-      if(e.code === "ArrowRight" && goRigth < 1275){
+      if(e.code === "ArrowRight" && goRight < 1275){
         changeImge("right");
-        goRigth+=speed;
+        goRight+=speed;
         
-      }else if(e.code === "ArrowLeft" && goRigth > -30){
+      }else if(e.code === "ArrowLeft" && goRight > -30){
         changeImge("left");
-        goRigth-=speed;
-        console.log(goRigth);
+        goRight-=speed;
+        console.log(goRight);
       }else if(e.code === "ArrowUp" && goDown > -30){
         changeImge("top");
         goDown-=speed;
@@ -46,16 +46,16 @@ document.addEventListener('keydown', function(e) {
         changeImge("down");
         goDown+=speed;        
       }
-      character.style.left = goRigth + "px";
+      character.style.left = goRight + "px";
       character.style.top = goDown +"px";
 
       targetX = character.offsetLeft
       targetY = character.offsetTop
 
       
-      if(goRigth === 1000)
+      if(goRight === 1000)
       {
-          goRigth -=5 ;
+          goRight -=5 ;
       }
   });
   document.addEventListener("keyup",function(e){
