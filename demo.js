@@ -9,7 +9,7 @@ var x = 300,
       
       velX = 0,
       velY = 0,
-      thrust = 5;
+      thrust = 4;
   
   var blue = document.getElementById("blue");
 
