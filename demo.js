@@ -23,7 +23,7 @@ var monster = {
   x:0,
   y:0,
   speed:5,
-  health:80,
+  dmg:80,
 }
 var foodListOnMap = [];
 
@@ -72,7 +72,7 @@ var count;
        char.src = "gif/down.gif";
         count=4;
     }
-    monsterMove();
+    //monsterMove();
     if(dir === "stop" && count !== 5){
         console.log(character);
         nextToFood();
@@ -129,16 +129,13 @@ function nextToFood(){
         var charY = character.y;
         var diffX = charX - foodX;
         var diffY = charY - foodY;
-        if((charX===foodX && foodY===charY))
-        {
-          break;
-        }else if(diffX >= 0 && diffX <=70 || diffX >= -70 && diffX <= 0)
+        if(diffX >= 0 && diffX <=70 || diffX >= -70 && diffX <= 0)
         {
             if(diffY >= 0 && diffY <=70 || diffY >= -70 && diffY <= 0)
             {
               var id = foodListOnMap[i].id
               console.log("eat <<< "+foodListOnMap[i].id*3);
-              character.health+=foodListOnMap[i].id*2;
+              character.health+=foodListOnMap[i].id*3;
               document.getElementById(foodListOnMap[i].id).remove();
               console.log(foodListOnMap);
               foodListOnMap = foodListOnMap.filter((item)=>{
@@ -163,7 +160,7 @@ function makeMonster(){
   monsterImg.style.position = "absolute";
   monsterImg.style.left = monsterX + "px";
   monsterImg.style.top = monsterY + "px";
-  monsterImg.id = 
+  monsterImg.id = monsterCount;
   monster.id = monsterCount;
   monster.x = monsterx;
   monster.y = monsterY;
