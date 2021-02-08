@@ -4,32 +4,58 @@
 // →	Rightwards Arrow	26
 // ←	Leftwards Arrow	27
 
+var x = 300,
+      y = 0,
+      
+      velX = 0,
+      velY = 0,
+      thrust = 4;
+  
+  var blue = document.getElementById("blue");
+
+  // green.style.left = targetX;
+  // green.style.top = targetY;
+
+  blue.style.left = x;
+  blue.style.top = y;
+
+
 var character = document.getElementsByTagName("img")[0];
 
+targetX = character.offsetLeft
+targetY = character.offsetTop
+
 var speed  = 10;
-var goRigth = speed;
+var goRight = speed;
 var goDown = speed;
-token = "0";
+
 document.addEventListener('keydown', function(e) {
     console.log(e.code);
-      if(e.code === "ArrowRight"){
+      if(e.code === "ArrowRight" && goRight < 1275){
         changeImge("right");
-        goRigth+=speed;
-      }else if(e.code === "ArrowLeft"){
+        goRight+=speed;
+        
+      }else if(e.code === "ArrowLeft" && goRight > -30){
         changeImge("left");
-        goRigth-=speed;
-      }else if(e.code === "ArrowUp"){
+        goRight-=speed;
+        console.log(goRight);
+      }else if(e.code === "ArrowUp" && goDown > -30){
         changeImge("top");
         goDown-=speed;
-      }else if(e.code === "ArrowDown"){
+      }else if(e.code === "ArrowDown" && goDown < 540){
         changeImge("down");
-        goDown+=speed;
+        goDown+=speed;        
       }
-      character.style.left = goRigth + "px";
+      character.style.left = goRight + "px";
       character.style.top = goDown +"px";
-      if(goRigth === 1000)
+
+      targetX = character.offsetLeft
+      targetY = character.offsetTop
+
+      
+      if(goRight === 1000)
       {
-          goRigth -=5 ;
+          goRight -=5 ;
       }
   });
   document.addEventListener("keyup",function(e){
@@ -45,7 +71,7 @@ var count;
       }else if(dir === "left" && count !==2){
         character.src = "gif/left.gif";
         count = 2;
-      }else if(dir === "top" && count !=3){
+      }else if(dir === "top" && count !==3){
         character.src = "gif/top.gif";
         count = 3;
     }else if(dir === "down" && count !==4){
@@ -65,20 +91,66 @@ var count;
           
 
   }
-  var food = function (){
-    var num = 1;
-    var x = getRandomInt(1400);
-    var y = getRandomInt(1000);
-    var foo = document.getElementById("food");
-    foo.src = `url("food/"${num}".jpg")`;
-    foo.style.position = "relative";
-    foo.style.left = x + "px";
-    foo.style.bottom = y + "px";
-    num++;
 
-  }
-  setInterval(food,5000);
+  
 
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
-  }
+  function draw(){   
+    var tx = targetX - x,
+        ty = targetY - y,
+        dist = Math.sqrt(tx*tx+ty*ty),        
+
+    
+      velX = (tx/dist)*thrust;
+      velY = (ty/dist)*thrust;
+    
+    if(dist > 10){
+      x += velX;
+      y += velY;
+    }
+
+    blue.style.left = x + 'px';
+    blue.style.top = y + 'px';
+
+    // green.style.left = targetX + 'px';
+    // green.style.top = targetY + 'px';    
+    
+    setTimeout(function(){draw()}, 30);   
+}
+
+draw();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // var food = function (){
+  //   var num = 1;
+  //   var x = getRandomInt(1400);
+  //   var y = getRandomInt(1000);
+  //   var foo = document.getElementById("food");
+  //   foo.src = `url("food/"${num}".jpg")`;
+  //   foo.style.position = "relative";
+  //   foo.style.left = x + "px";
+  //   foo.style.bottom = y + "px";
+  //   num++;
+
+  // }
+  // setInterval(food,5000);
+
+  // function getRandomInt(max) {
+  //   return Math.floor(Math.random() * Math.floor(max));
+  // }
