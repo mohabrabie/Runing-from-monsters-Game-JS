@@ -1,32 +1,11 @@
 
-
 var body = document.getElementsByTagName("body")[0];
-var char = document.getElementsByTagName("img")[0];
-//abdo
-var x = 300,
-      y = 0,
-      
-      velX = 0,
-      velY = 0,
-      thrust = 4;
-  
-  var blue = document.getElementById("blue");
-
-  // green.style.left = targetX;
-  // green.style.top = targetY;
-
-  blue.style.left = x;
-  blue.style.top = y;
+var charImg = document.getElementsByTagName("img")[0];
 
 
-var character = document.getElementsByTagName("img")[0];
 
-targetX = character.offsetLeft
-targetY = character.offsetTop
-
-var speed  = 10;
-var goRight = speed;
-var goDown = speed;
+var targetX;
+var targety;
 
 token = "0";
 var food = {
@@ -36,112 +15,75 @@ var food = {
   id:0,
 }
 var character = {
+  id:0,
   x:0,
   y:0,
   speed:10,
   health:100,
 }
-var monster = {
-  id:0,
-  x:0,
-  y:0,
-  speed:5,
-  dmg:80,
-}
-var foodListOnMap = [];
 
+var foodListOnMap = [];
+  
 document.addEventListener('keydown', function(e) {
-      if(e.code === "ArrowRight"){
+      if(e.code === "ArrowRight" && character.x < 1400){
         changeImge("right");
         character.x += character.speed;
-      }else if(e.code === "ArrowLeft"){
+      }else if(e.code === "ArrowLeft" && character.x > 0){
         changeImge("left");
         character.x -= character.speed;
-      }else if(e.code === "ArrowUp"){
+      }else if(e.code === "ArrowUp" && character.y > 0){
         changeImge("top");
         character.y -= character.speed;
-      }else if(e.code === "ArrowDown"){
+      }else if(e.code === "ArrowDown" && character.y < 550){
         changeImge("down");
         character.y += character.speed;
       }
-     char.style.left = character.x + "px";
-     char.style.top = character.y +"px";
-      if(character.x >= 1300)
-      {
-          character.x -=5 ;
-      }
-      if(character.y >= 1000)
-      {
-        character.y -=5;
+      charImg.style.left = character.x + "px";
+      charImg.style.top = character.y +"px";
 
-document.addEventListener('keydown', function(e) {
-    console.log(e.code);
-      if(e.code === "ArrowRight" && goRight < 1275){
-        changeImge("right");
-        goRight+=speed;
+      targetX = charImg.offsetLeft;
+      targetY = charImg.offsetTop;
         
-      }else if(e.code === "ArrowLeft" && goRight > -30){
-        changeImge("left");
-        goRight-=speed;
-        console.log(goRight);
-      }else if(e.code === "ArrowUp" && goDown > -30){
-        changeImge("top");
-        goDown-=speed;
-      }else if(e.code === "ArrowDown" && goDown < 540){
-        changeImge("down");
-        goDown+=speed;        
-      }
-      character.style.left = goRight + "px";
-      character.style.top = goDown +"px";
-
-      targetX = character.offsetLeft
-      targetY = character.offsetTop
-
       
-      if(goRight === 1000)
-      {
-          goRight -=5 ;
-      }
-  });
+      });
+
   document.addEventListener("keyup",function(e){
     changeImge("stop");
   })
 var count;
   function changeImge(dir){
-
       if(dir === "right" && count !== 1)
       {
-       char.src = "gif/right.gif";
+        charImg.src = "gif/right.gif";
         count = 1;
       }else if(dir === "left" && count !==2){
-       char.src = "gif/left.gif";
+        charImg.src = "gif/left.gif";
         count = 2;
       }else if(dir === "top" && count !=3){
-       char.src = "gif/top.gif";
+        charImg.src = "gif/top.gif";
         count = 3;
     }else if(dir === "down" && count !==4){
-       char.src = "gif/down.gif";
+        charImg.src = "gif/down.gif";
         count=4;
     }
-    //monsterMove();
     if(dir === "stop" && count !== 5){
         console.log(character);
         nextToFood();
         
         if(count === 1 || count == 4)
         {
-           char.src = "gif/standRight.gif";
+          charImg.src = "gif/standRight.gif";
         }else if(count === 2 || count == 3){
-           char.src = "gif/standLeft.gif";
+          charImg.src = "gif/standLeft.gif";
         }
         count = 5;
     }
   }
-  var foodNum = 1;
-  var foodCounter = 1;
-  var makeFood = function (){
-    var foodX = getRandomInt(1000);
-    var foodY = getRandomInt(1000);
+    var foodNum = 1;
+    var foodCounter = 1;
+    var makeFood = function (){
+    var foodX = getRandomInt(1400);
+    var foodY = getRandomInt(550);
     food.num=foodNum;
     food.x = foodX;
     food.y = foodY;
@@ -170,7 +112,6 @@ function getRandomInt(max) {
   return Math.floor(Math.random(0) * Math.floor(max));
 }
 
-//var myWorker = new Worker("food.js");
 function nextToFood(){
       for(let i=0;i<foodListOnMap.length;i++)
       {
@@ -185,8 +126,8 @@ function nextToFood(){
             if(diffY >= 0 && diffY <=70 || diffY >= -70 && diffY <= 0)
             {
               var id = foodListOnMap[i].id
-              console.log("eat <<< "+foodListOnMap[i].id*3);
-              character.health+=foodListOnMap[i].id*3;
+              console.log("eat <<< "+foodListOnMap[i].id*2);
+              character.health+=foodListOnMap[i].id*2;
               document.getElementById(foodListOnMap[i].id).remove();
               console.log(foodListOnMap);
               foodListOnMap = foodListOnMap.filter((item)=>{
@@ -199,99 +140,76 @@ function nextToFood(){
         }
     }
 }
+var monster = {
+  id:0,
+  x:300,
+  y:0,
+  speed:8,
+  dmg:6,
+  velX:0,
+  velY:0,
+  perSec:50,
+  img:0,
+}
 var monsterCount = 1;
 var MonsterList = [];
 function makeMonster(){
-  var monsterX = getRandomInt(character.x-100);
-  var monsterY = getRandomInt(character.y-100);
+  monster.x = getRandomInt(character.x-300);
+  monster.y = getRandomInt(character.y-300);
   var monsterImg = document.createElement("img");
-  monsterImg.src = `gif/1.jpg`;
+  monsterImg.src = `monster/right.gif`;
   monsterImg.style.width = "40px";
   monsterImg.style.height = "40px";
   monsterImg.style.position = "absolute";
-  monsterImg.style.left = monsterX + "px";
-  monsterImg.style.top = monsterY + "px";
-  monsterImg.id = monsterCount;
-  monster.id = monsterCount;
-  monster.x = monsterx;
-  monster.y = monsterY;
+  monsterImg.style.left = monster.x + "px";
+  monsterImg.style.top = monster.y + "px";
+  monsterImg.id = monsterCount + "m";
+  monster.id = monsterCount+"m";
+  monster.img = monsterImg;
+  targetX = charImg.offsetLeft;
+  targetY = charImg.offsetTop;
   monsterCount++;
   MonsterList.push(monster);
   body.appendChild(monsterImg);
+  draw(monster);
 }
-function monsterMove(){
-  for(let i=0;i<MonsterList.length;i++)
-  {
-    if(MonsterList[i].x < character.x)
-    {
-      document.getElementById(MonsterList[i].id).style.left = (monster.x+monster.speed)+"px";
-    }else if(MonsterList[i].x > character.x)
-    {
-      document.getElementById(MonsterList[i].id).style.left = (monster.x-monster.speed)+"px";
-    }
-  }
-}
-
-
-  
-
-  function draw(){   
-    var tx = targetX - x,
-        ty = targetY - y,
-        dist = Math.sqrt(tx*tx+ty*ty),        
-
-    
-      velX = (tx/dist)*thrust;
-      velY = (ty/dist)*thrust;
+//setInterval(makeMonster,4000);
+makeMonster();
+// blue.style.left = monster.x;
+// blue.style.top = monster.y;
+var token;
+function draw(monster){   
+    var tx = targetX - monster.x,
+        ty = targetY - monster.y,
+        dist = Math.sqrt(tx*tx+ty*ty);      
+      console.log("draw monster move");
+      
+      monster.velX = (tx/dist)*monster.speed;
+      monster.velY = (ty/dist)*monster.speed;
     
     if(dist > 10){
-      x += velX;
-      y += velY;
+      monster.x += monster.velX;
+      monster.y += monster.velY;
     }
-
-    blue.style.left = x + 'px';
-    blue.style.top = y + 'px';
-
-    // green.style.left = targetX + 'px';
-    // green.style.top = targetY + 'px';    
+    var img = document.getElementById(monster.id);
     
-    setTimeout(function(){draw()}, 30);   
+    if(character.x > monster.x && token!=1)
+    {
+      img.src = `monster/right.gif`;
+      token = 1;
+    }else if(character.x < monster.x&& token!=2){
+      img.src = `monster/left.gif`;
+      token =2;
+    }
+    
+    img.style.left = monster.x + 'px';
+    img.style.top = monster.y + 'px';
+    
+    setTimeout(function(){draw(monster)},monster.perSec);   
 }
-
-draw();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // var food = function (){
-  //   var num = 1;
-  //   var x = getRandomInt(1400);
-  //   var y = getRandomInt(1000);
-  //   var foo = document.getElementById("food");
-  //   foo.src = `url("food/"${num}".jpg")`;
-  //   foo.style.position = "relative";
-  //   foo.style.left = x + "px";
-  //   foo.style.bottom = y + "px";
-  //   num++;
-
-  // }
-  // setInterval(food,5000);
-
-  // function getRandomInt(max) {
-  //   return Math.floor(Math.random() * Math.floor(max));
-  // }
+function drawAllMonsters(){
+  for(let i=0;i<MonsterList.length;i++)
+  {
+    draw(MonsterList[i]);
+  }
+}
