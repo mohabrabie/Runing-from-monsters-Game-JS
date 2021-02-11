@@ -1,6 +1,13 @@
 
 var body = document.getElementsByTagName("body")[0];
 var charImg = document.getElementsByTagName("img")[0];
+var health = document.getElementById("health");
+var speed = document.getElementById("speed");
+var monsterHealth = document.getElementById("monster-health");
+var timer = document.getElementById("timer");
+
+
+
 
 
 
@@ -18,7 +25,7 @@ var character = {
   id:0,
   x:0,
   y:0,
-  speed:10,
+  speed:50,
   health:100,
   currentImg:"",
 }
@@ -272,3 +279,67 @@ function nextToMonster(){
 function takeDmg(dmg){
   //console.log("DMG by "+monster.dmg);
 }
+// while(true){
+//   health.innerHTML = "<p>100/</p>" + character.health;
+// }
+
+var i = 1;                 
+
+function myLoop() {         
+  setTimeout(function() {   
+    health.innerHTML = `<p class="inner-text">you: ${character.health}</p>` ;  
+    speed.innerHTML = `<p class="inner-text">speed: ${character.speed}</p>` ;
+    monsterHealth.innerHTML = `<p class="inner-text">monster: ${monster.health}</p>` ; 
+    timer.innerHTML = `<p class="inner-text">Timer: ${i}</p>`  
+    i++;                
+    myLoop();
+         
+  }, 500) 
+  if(character.health <= 0){
+    modalText.innerHTML = `<p id="modal-text">Game Over</p><button id="contBtn">Continue playing</button>`
+    modal.style.display = "block";
+    
+  }else if(i == 100){
+    modalText.innerHTML = `<p id="modal-text">You Won!</p><button id="contBtn">Continue playing</button>`
+    document.getElementById("modal-text").style.color = "green";
+    modalText.style.backgroundImage = "url('gh.jpg')";
+    modal.style.display = "block";
+  }
+
+}  
+
+myLoop();
+
+
+
+var modal = document.getElementById("myModal");
+
+
+
+var modalText = document.getElementsByClassName("modal-content")[0]
+
+// When the user clicks on the button, open the modal
+// btn.onclick = function() {
+//   modal.style.display = "block";
+// }
+
+// When the user clicks on <span> (x), close the modal
+
+// if(character.health <= 0){
+//   modal.style.display = "block";
+// }
+// modalText.innerHTML = `<p id="modal-text">Game Over</p><button id="contBtn">Continue playing</button>`
+
+var contBtn = document.getElementById("contBtn");
+
+
+contBtn.onclick = function() {
+  modal.style.display = "none";
+  character.health = 100;
+}
+// When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// }
