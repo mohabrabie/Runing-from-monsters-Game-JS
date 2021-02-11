@@ -9,7 +9,7 @@ var x = 300,
       
       velX = 0,
       velY = 0,
-      thrust = 4;
+      thrust = 10;
   
   var blue = document.getElementById("blue");
 
@@ -53,10 +53,10 @@ document.addEventListener('keydown', function(e) {
       targetY = character.offsetTop
 
       
-      if(goRight === 1000)
-      {
-          goRight -=5 ;
-      }
+      // if(goRight === 1000)
+      // {
+      //     goRight -=5 ;
+      // }
   });
   document.addEventListener("keyup",function(e){
     changeImge("stop");
@@ -103,7 +103,7 @@ var count;
       velX = (tx/dist)*thrust;
       velY = (ty/dist)*thrust;
     
-    if(dist > 10){
+    if(dist > 70){
       x += velX;
       y += velY;
     }
@@ -114,7 +114,7 @@ var count;
     // green.style.left = targetX + 'px';
     // green.style.top = targetY + 'px';    
     
-    setTimeout(function(){draw()}, 30);   
+    setTimeout(function(){draw()}, 200);   
 }
 
 draw();
