@@ -13,7 +13,7 @@ onmessage = function(e) {
     food.idfood = foodCounter;
     foodNum++;
     foodCounter++;
-    if(foodNum === 8)
+    if(foodNum === 10)
     {
         foodNum = 1;
         clearInterval(food);
