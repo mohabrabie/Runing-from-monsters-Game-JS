@@ -1,0 +1,112 @@
+body{
+    background:url("../pics/10.jpg")  no-repeat center fixed;
+    background-size:cover;
+}
+header{
+    margin-top: 2%;
+    font-size:30px ;
+    text-align: center;
+    color: white;
+    font-weight: 2px;
+    /*font-family: Curlz MT;*/
+    font-family: Castellar;
+  }
+#divA{
+    display:inline-block;
+    /*background-color: rgb(114, 197, 103);*/
+    background-color:transparent;
+    width:contain;
+    height:contain;
+    margin-top:27%;
+    margin-left: 10%;
+     background-size: contain;
+     
+  }
+  
+  .mydiv1{
+   /* background-color: rgb(243, 161, 161);*/
+    background-color:transparent;
+      display:inline-block;
+  
+  }
+ 
+.reflct {
+    position: relative;
+    -webkit-box-reflect: below -4px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+  }
+  
+  .reflct li {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    /*animation: animate 1.5s ease-out;
+    animation-delay: calc(.1s * var(--i))*/
+  }
+  
+  .chooseBtn {
+      margin-left: 28%;
+      margin-top: 0%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: contain;
+    padding: 40px;
+    background: transparent;
+  }
+  
+  .chooseBtn form a {
+    display: inline-block;
+    padding: 5px 15px;
+    color:white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+    font-size: 22px;
+    margin-top: 20px;
+    border-top: 2px solid rgb(254, 201, 0);
+    border-bottom: 2px solid #FF6600;
+    border-left: 2px solid #FFF496;
+    border-right: 2px solid #DE4A00;
+    animation: animation_button 1s linear infinite;
+  }
+  
+  .chooseBtn a:hover {
+    background:#FF3300;
+    color: #fff;
+    border-radius: 5px;
+    animation: none;
+    border:transparent;
+    box-shadow: 0 0 5px #FF3300, 0 0 25px #FF0000, 0 0 50px #FF3300,0 0 100px #FF6600;
+  }
+  
+  .chooseBtn a span {
+    position: absolute;
+    display: block;
+  }
+  
+  
+  @keyframes animation_button {
+    20% {
+        border-top: 2px solid  #9D0400;
+        border-bottom: 2px solid #BE2D00;
+        border-left: 2px solid   #FF6600 ;
+        border-right: 2px solid   #FF6600 ;
+        
+      }
+    40% {
+        border-top: 2px solid #FF6600;
+        border-bottom: 2px solid #FFA366;
+        border-left: 2px solid    #BE2D00;
+        border-right: 2px solid  rgb(239, 243, 17) ;
+        
+      }
+    100% {
+        border-top: 2px solid rgb(239, 243, 17);
+        border-bottom: 2px solid   #FFA366;
+        border-left: 2px solid  #BE2D00;
+        border-right: 2px solid  #FF6600;
+      }
+    
+  }
+  
+  

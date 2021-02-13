@@ -1,0 +1,49 @@
+body {
+    background:url("../pics/10.jpg")  no-repeat center ;
+    background-size:  cover  ;
+}
+
+.intro {
+    margin-left: 70%;
+    fill:  rgb(128, 12, 12);
+    stroke:none;
+    stroke-width: 2px;
+    font-size: 120px;
+    font-family: chiller;
+    stroke-dasharray: 1360;
+    text-shadow: 0 0 5px #e6c173, 0 0 25px #e9bfb3, 0 0 50px #e94949,0 0 100px #03e9f4;
+    animation-iteration-count: 1;
+    animation:animation_intro 4s cubic-bezier(0, 0.23, 1, .1) ;
+  }
+
+  @keyframes animation_intro {
+      0% {
+          stroke: rgb(20, 2, 100);
+          stroke-width: 2px;
+          opacity: 0;
+          fill: none;
+          stroke-dasharray: 0;
+      }
+      30% {
+          stroke: rgb(128, 12, 12);
+          stroke-width: 2px;
+          opacity: 10;
+          fill: none;
+           /*stroke-dasharray: 1360; */
+      }
+      80% {
+          stroke: rgb(117, 14, 74);
+          stroke-width: 2px;
+          
+      }
+      90%{
+          opacity:5;
+        fill: rgba(255, 255, 255, 0);
+      }
+      100% {
+          opacity: 10;
+          fill: #eb4f33;
+          stroke-dasharray: 1360;
+          outline: none;
+          stroke: none;
+      }}
