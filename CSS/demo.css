@@ -1,0 +1,17 @@
+img{
+    width: 80px;
+    height: 100px;
+    position: absolute;
+}
+body{
+    background-color: transparent;
+    /* background-image:url("/images/food/939d1a72ec96904c65708b7880f0c2c9.jpg"); */
+    background-size: cover;
+    /* background-color: #7F7F7F; */
+}
+.bkglvl1{
+    background-image:url("/images/food/939d1a72ec96904c65708b7880f0c2c9.jpg");
+}
+.bkglvl2{
+    background-image:url("/images/food/f2.jpg");
+}
