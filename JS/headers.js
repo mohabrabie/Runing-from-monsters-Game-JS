@@ -16,11 +16,12 @@ function myLoop() {
     modal.style.display = "block";
     
 //game over timer 
-  }else if(timeminute == 3){
-    modalText.innerHTML = `<p id="modal-text">You Won!</p><button id="contBtn">Continue playing</button>`
+  }else if(timeminute == 8){
+    modalText.innerHTML = `<p id="modal-text">You Won!</p><button id="contBtn" onclick="location.href='menu.html'">Continue playing</button>`
     document.getElementById("modal-text").style.color = "green";
     modalText.style.backgroundImage = "url('/images/pics/gh.jpg')";
     modal.style.display = "block";
+    gameOver();
   }
 
 }  

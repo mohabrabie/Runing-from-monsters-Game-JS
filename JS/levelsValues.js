@@ -7,7 +7,7 @@ var foodtimeappear;
 var foodlvl;
 
 function gameOver() {
-  cancelInterval(timer);
+  clearInterval(timer);
 }
 
 
@@ -40,7 +40,7 @@ function setfoodtime(){
             document.getElementById("mainbody").classList.add('bkglvl1');
 
         }
-        else if(timemin == 1 ){
+        else if(timemin == 2 ){
             foodtimeappear=8000;
             foodlvl=4;
             document.getElementById("mainbody").classList.remove('bkglvl1');
@@ -51,11 +51,11 @@ function setfoodtime(){
 
             //     }
         }
-        else if(timemin == 2){
+        else if(timemin == 4){
             foodtimeappear=6000;
             foodlvl=3;
         }
-        else if(timemin == 3 ){
+        else if(timemin == 6 ){
             foodtimeappear=5000;
             foodlvl=2;
         }
