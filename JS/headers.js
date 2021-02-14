@@ -1,0 +1,45 @@
+var l= 1;                 
+var timeminute;
+function myLoop() {         
+  setTimeout(function() {   
+    health.innerHTML = `<p class="inner-text">you: ${character.health}</p>` ;  
+    speed.innerHTML = `<p class="inner-text">speed: ${character.speed}</p>` ;
+    monsterHealth.innerHTML = `<p class="inner-text">monster: ${monster.health}</p>` ; 
+    // timer.innerHTML = `<p class="inner-text">Timer: ${i}</p>`  
+    l++;         
+    timeminute=document.getElementById("timmin").innerHTML;       
+    myLoop();
+         
+  }, 1000) 
+  if(character.health <= 0){
+    modalText.innerHTML = `<p id="modal-text">Game Over</p><button id="contBtn">Continue playing</button>`
+    modal.style.display = "block";
+    
+//game over timer 
+  }else if(timeminute == 3){
+    modalText.innerHTML = `<p id="modal-text">You Won!</p><button id="contBtn">Continue playing</button>`
+    document.getElementById("modal-text").style.color = "green";
+    modalText.style.backgroundImage = "url('/images/pics/gh.jpg')";
+    modal.style.display = "block";
+  }
+
+}  
+
+myLoop();
+
+
+
+var modal = document.getElementById("myModal");
+
+
+
+var modalText = document.getElementsByClassName("modal-content")[0]
+
+
+var contBtn = document.getElementById("contBtn");
+
+
+contBtn.onclick = function() {
+  modal.style.display = "none";
+  character.health = 100;
+}
