@@ -2,6 +2,7 @@ var l= 1;
 var timeminute;
 function myLoop() {         
   setTimeout(function() {   
+    
     health.innerHTML = `<p class="inner-text">you: ${character.health}</p>` ;  
     speed.innerHTML = `<p class="inner-text">speed: ${character.speed}</p>` ;
     monsterHealth.innerHTML = `<p class="inner-text">monster: ${monster.health}</p>` ; 

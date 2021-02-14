@@ -1,5 +1,5 @@
 body{
-    background:url("/images/pics/10.jpg")  no-repeat center fixed;
+    background:url("../images/pics/10.jpg")  no-repeat center fixed;
     background-size: cover center ;
     /*background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");*/
     background-size:cover;
@@ -245,33 +245,6 @@ svg{
 	border-radius: 50%;
 	box-shadow: 0 0 5px #fff , inset 0 0 5px #fff;
 }
-
-.circle2:before{
-	content: '';
-	position: absolute;
-	top: 10px;
-	left: 10px;
-	right: 10px;
-	bottom: 10px;
-	border: 8px solid #fff;
-	border-radius: 50%;
-	box-shadow: 0 0 5px #0f0 , inset 0 0 5px #0f0;
-	-webkit-box-reflect: below 10px linear-gradient(transparent , transparent , #0002);
-	animation: animation_ring 5s linear infinite;
-}
-
-.circle2:after{
-	content: '';
-	position: absolute;
-	top: 10px;
-	left: 10px;
-	right: 10px;
-	bottom: 10px;
-	border: 8px solid #fff;
-	border-radius: 50%;
-	box-shadow: 0 0 5px #fff , inset 0 0 5px #fff;
-}
-
 @keyframes animation_ring{
 	0%{
 		box-shadow: 0 0 5px #0f0 , inset 0 0 5px #0f0;
@@ -296,8 +269,8 @@ svg{
 	}
 }
 
-.circle2:before{
-	animation-delay: -2s;
+.circle1:before{
+	animation-delay: 2s;
 }
 
 

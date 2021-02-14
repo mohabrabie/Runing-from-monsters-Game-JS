@@ -43,7 +43,7 @@ document.addEventListener('keydown', function(e) {
     }else if(e.code === "ArrowLeft" && character.x > 0){
       changeImge("left");
       character.x -= character.speed;
-    }else if(e.code === "ArrowUp" && character.y > 0){
+    }else if(e.code === "ArrowUp" && character.y > 50){
       changeImge("top");
       character.y -= character.speed;
     }else if(e.code === "ArrowDown" && character.y < 550){

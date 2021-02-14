@@ -14,13 +14,13 @@ token = "0";
 var food = {
   num : 1,
   x : 0,
-  y : 0,
+  y : 50,
   id:0,
 }
 var character = {
   id:0,
   x:0,
-  y:0,
+  y:50,
   speed:10,
   health:100,
   currentImg:"",
@@ -28,7 +28,7 @@ var character = {
 var monster = {
   id:0,
   x:300,
-  y:0,
+  y:50,
   speed:5,
   dmg:6,
   velX:0,
@@ -66,4 +66,14 @@ document.head.appendChild(importheader);
 window.onload = function(){
   document.getElementById('startbtn').click();
 }
+
+
+let audioSource = document.querySelector("#audio-player");
+let songsList = {
+  background1:"sounds/Forest_birds.wav",
+  background2:"sounds/GHOSTS.wav",
+  Eating:"sounds/Human_Bite_Food.mp3",
+};
+
+let keys = Object.keys(songsList);
 
