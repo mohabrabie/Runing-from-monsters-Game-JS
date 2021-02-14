@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Runnig From Monster Game</title>
+    <link rel="stylesheet" href="CSS/demo.css">
+</head>
+<body id="mainbody">
+    
+    <div id="audio-source">
+        <!-- <audio id="audio-player"  src=""  autoplay="false" loop="true"></audio> -->
+        <audio id="audio-player"  src="" style="display: none;" ></audio>
+
+    </div>
+
+
+    <!-- <div id="header-div">
+        <div id="health"></div>
+        <div id="speed"></div>
+        <div id="monster-health"></div>
+        <div id="timer" class="inner-text"> <p>Timer: <span id="timmin">0</span>:<span id="timesec">0</span></p></div>
+    </div>
+
+
+    <img src="" alt="" width="500px" height="900px" id="player">
+    <img width="10" height="10" src="blue.jpg" id="blue" style="position: absolute;">
+    
+    <div align="right">
+        <button type="button" id="startbtn"onclick="start()" style="display: none;">Start Game</button>
+     </div>  
+     -->
+     <div id="gameBar"> 
+        <div id="characterDetails">
+            Player Name
+            <div id="characterHPCover">
+                <div id="characterHP">
+                    HP
+                </div>
+            </div>
+            <div id="characterSpeed">
+                speed : <span>10</span>
+            </div>
+        </div>
+        <div id="timer">
+            Timer: <span id="timmin">0</span>:<span id="timesec">0</span>
+            <button type="button" id="startbtn"onclick="start()" style="display: none;">Start Game</button>
+        </div>
+        <div id="monsterDetails"> 
+            Monster lvl1
+            <div id="monsterHPCover">
+                <div id="monsterHP">
+                    HP
+                </div>
+            </div>
+            <div id="monsterSpeed">
+                speed : <span>10</span>
+            </div>
+        </div>
+
+        </div>
+        <div id="gameBorder">
+            <img src="/images/gif/standLeft.gif" alt="" width="50px" height="90px" id="player">
+        </div>
+
+        
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <!-- <span class="close">&times;</span> -->
+          <!-- <p id="modal-text"></p> -->
+          <button id="contBtn">Continue playing</button>           
+        </div>
+      
+      </div>
+
+    <script src="JS/main.js"></script>
+  
+</body>
+</html>

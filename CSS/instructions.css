@@ -29,16 +29,16 @@ header{
 .image img
 {
   border-radius: 5px;
-    width:150px;
-  height: 150px;
+    width:120px;
+  height: 120px;
 }
 
 .imagehover
 {
   position: absolute;
   top: 0;
-  width: 150px;  
-  height: 150px;
+  width: 120px;  
+  height: 120px;
   opacity: 0;
   cursor: default;
 }
@@ -53,10 +53,10 @@ header{
     
   position: relative;
   box-sizing: border-box;
- height:150px;
+ height:120px;
   text-align: center;
   background: rgba(218, 211, 211, 0.9);
-  padding: 65px 5px 5px 5px;
+  padding: 50px 5px 5px 5px;
   font-size: 15px;
   text-align: center;
 }
@@ -72,23 +72,7 @@ header{
     animation: animate_gamename 1.5s ease-out;
     animation-delay: calc(.1s * var(--i))
   }
-  /*
-  @keyframes animate_gamename {
-    40% {
-     transform: translateY(-100px);
-   }
-   60% {
-       transform: translateY(100px);
-     }
-   
-   80% {
-     transform: translateX(-100px);
-   }
-   20% {
-     transform: translateX(100px);
-   }
-  }
-  */
+  
 p {
     height:fit-content;
     width: fit-content;
@@ -200,6 +184,7 @@ p {
   position: absolute;
   width: contain;
   background: transparent;
+  margin-left: 90%;
 
 }
 

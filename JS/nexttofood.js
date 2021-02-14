@@ -10,7 +10,6 @@ var foodid ;
 onmessage = function(e) {
     foodListOnMap=e.data[0];
     character=e.data[1];
-    foodlvl=e.data[2];
     for(let i=0;i<foodListOnMap.length;i++)
     {
       foodposX = foodListOnMap[i].x;
@@ -25,7 +24,7 @@ onmessage = function(e) {
               {
 
 
-                character.health+=foodListOnMap[i].num*foodlvl;
+                character.health+=foodListOnMap[i].num;
                 foodid = ++foodListOnMap[i].idfood ;
                 // foodListOnMap = foodListOnMap.filter((item)=>{
                 //   return (foodid != item.idfood);
@@ -59,51 +58,3 @@ onmessage = function(e) {
 
 }
 
-
-// function nextToFood(){
- 
-
-// for(let i=0;i<foodListOnMap.length;i++)
-// {
-//   foodposX = foodListOnMap[i].x;
-//   foodposY = foodListOnMap[i].y;
-//   charX = character.x;
-//   charY = character.y;
-//   diffX = charX - foodposX;
-//   diffY = charY - foodposY;
-//   // if((charX===foodX && foodY===charY))
-//   // {
-//   //   break;
-//   // }else
-//   //  if(diffX >= 0 && diffX <=70 || diffX >= -70 && diffX <= 0)
-//   // {
-//   //     if(diffY >= 0 && diffY <=70 || diffY >= -70 && diffY <= 0)
-//   //     {
-//     if(diffX <=10 && diffX >= -10)
-//     {
-//         if(diffY <=10 && diffY >= -10)
-//         {
-//           console.log(diffX,diffY);
-//         //   foodid =++ foodListOnMap[i].id ;
-       
-      
-//         // // console.log("foodid",foodid);
-//         // // console.log("eat <<< "+foodListOnMap[i].id*3);
-//         // character.health+=foodListOnMap[i].id*2;
-//         // // console.log("foodlist",foodListOnMap[i].id);
-//         // element = document.getElementById(foodid);
-//         // element.style.display="none";
-//         // // element.remove();
-//         // // element.empty();
-//         // // foodListOnMap = foodListOnMap.filter((item)=>{
-//         // //   console.log("hne");
-//         // //   return (foodid != item.id);
-//         // // });
-//         // // console.log("foodlistonmap",foodListOnMap);
-//        break;
-        
-//       }
-  
-//   }
-// }
-// }

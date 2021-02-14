@@ -1,6 +1,4 @@
 body{
-   /* background:url("img/4.jpg")  no-repeat center ;
-    background-size:cover;*/
     background-color: black;
 }
 header{
@@ -9,8 +7,6 @@ header{
   text-align: center;
   color: white;
   font-weight: 2px;
-  /*font-family: Curlz MT;
-  font-family: chiller;*/
   font-family: Castellar;
 }
 .reflct {
@@ -29,77 +25,59 @@ header{
 .div1{
   cursor: pointer;
 margin-top:10%;
-margin-left: 15%;
-margin-right: 10%;
+margin-left: 25%;
+margin-right: 15%;
 display:inline-block;
 /*background-color: white;*/
-width:150px;
-height:150px;
-
+width:120px;
+height:100px;
 }
 .div2{
   cursor: pointer;
-    margin-top:10%;
-    margin-right: 10%;
     display:inline-block;
     /*background-color: white;*/
-    width:150px;
-    height:150px;
+    width:120px;
+    height:100px;
+  
 }
-
 .div3{
-    margin-top:10%;
+  text-shadow: 0 0 5px #f3b8f0, 0 0 25px #f7c9f4, 0 0 50px #e9c5e0, 0 0 100px #f1bcf1;
+
+  color: rgb(232, 182, 236);
+  font-weight:100 ;
+  font-size: 25px;
+  margin-left: 45%;
+  text-align: center;
+  margin-top: 5%;
     display:inline-block;
     /*background-color: white;*/
-    width:150px;
-    height:150px;
+    width:fit-content;
+    height:fit-content;
 }
-
-
 #character1{
     position: absolute;
-    
     width:12%;
     height:30%
 }
 
 #character1:hover{
-  width:20%;
-  height:40%;
+  content: url("../images/gif/hitRight.gif") ;
+  width:12%;
+  height:30%
 }
 #character2{
     position: absolute;
-   
-    width:15%;
-    height:20%;
+    width:35%;
+    height:30%;
 }
 #character2:hover{
-    width:20%;
-    height:40%;
+  content: url("../images/gif/johnny-spin-i.gif") ;
 }
-#character3{
-    position: absolute;
-    width:15%;
-}
-
-#character3:hover{
-  width:20%;
-  height:40%;
-}
-
-
-/* 
-#whoplay{
-  text-align: center;
-  color:rgb(190, 69, 69);
-    position: absolute;
-    color: rgb(189, 34, 68);
-   
-} */
 
 .chooseBtn {
-  margin-top: 10%;
-    margin-left: 50%;
+
+  margin-top: 5%;
+    margin-left: 35%;
   position: absolute;
   width: contain;
   background: transparent;
@@ -259,5 +237,5 @@ li{
 cursor: pointer;
 }
 #startbtn{
-  margin-right: 20px;
+  margin-right: 200px;
 }

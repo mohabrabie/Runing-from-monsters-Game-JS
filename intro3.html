@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta http-equiv="refresh"
     content="6.5; url = menu.html" />
     <title>game</title>
@@ -27,7 +26,6 @@
         <li  style="--i:14;">R</li >
         </ul>
       </div>
-
 </header>
 
 </head>
@@ -35,9 +33,7 @@
     <div class="container">
     <div id="divA">
         <div class="mydiv1">
-            <!-- <img src="images/pics/tota.gif" width="150px" height="150px" /> -->
-            <img src="images/gif/hitLeft.gif"  width="150px" height="150px"/>
-            <img src="images/gif/hitRight.gif" wwidth="150px" height="150px"style="display:none"/>
+            <img src="images/gif/standRight.gif"  width="150px" height="150px"/>
         </div> 
     <div class="mydiv2"> 
         <p calss="p1">
@@ -57,20 +53,14 @@
         <p>
     </div>
     <div class="mydiv3"></div>
-        
-    <div class="circle1"   onclick="location.href='menu.html';" ></div>
-   
-	<div class="circle2"   onclick="location.href='menu.html';"></div>
- 
+    <div class="circle1"   onclick="location.href='menu.html';" ></div> 
     <svg>
 		<filter id="frequency">
 			<feTurbulence x = "0" y = "0" baseFrequency  = "0.009" numOctaves = "5" seed = "2">
 				<animate attributeName = "baseFrequency" dur = "60s" values = "0.02;0.005;0.02" repeatCount = "indefinite">
-					
 				</animate>
 			</feTurbulence>
 			<feDisplacementMap in = "SourceGraphic" scale = "30">
-				
 			</feDisplacementMap>
 		</filter>
 	</svg>
