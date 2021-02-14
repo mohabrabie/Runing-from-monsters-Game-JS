@@ -10,7 +10,6 @@ var foodid ;
 onmessage = function(e) {
     foodListOnMap=e.data[0];
     character=e.data[1];
-    foodlvl=e.data[2];
     for(let i=0;i<foodListOnMap.length;i++)
     {
       foodposX = foodListOnMap[i].x;
@@ -25,7 +24,7 @@ onmessage = function(e) {
               {
 
 
-                character.health+=foodListOnMap[i].num*foodlvl;
+                character.health+=foodListOnMap[i].num;
                 foodid = ++foodListOnMap[i].idfood ;
                 // foodListOnMap = foodListOnMap.filter((item)=>{
                 //   return (foodid != item.idfood);
