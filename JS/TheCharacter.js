@@ -3,25 +3,25 @@ let storage = JSON.parse(localStorage.getItem('CharID'));
 let player1 = document.getElementById("player");
 let character1_positions = 
 [
-"/images/gif/top.gif",
-"/images/gif/down.gif",
-"/images/gif/left.gif",
-"/images/gif/right.gif",
-"/images/gif/hitLeft.gif",
-"/images/gif/hitRight.gif",
-"/images/gif/standLeft.gif",
-"/images/gif/standRight.gif"
+"../images/gif/top.gif",
+"../images/gif/down.gif",
+"../images/gif/left.gif",
+"../images/gif/right.gif",
+"../images/gif/hitLeft.gif",
+"../images/gif/hitRight.gif",
+"../images/gif/standLeft.gif",
+"../images/gif/standRight.gif"
 ];
 
 let  character2_positions = [
-"/images/gif/c1top.gif",
-"/images/gif/c1down.gif",
-"images/gif/c1left.gif",
-"/images/gif/c1right.gif",
-"/images/gif/c1hitLeft.gif",
-"images/gif/c1hitRight.gif",
-"images/gif/c1standLeft.gif",
-"images/gif/c1standRight.gif"
+"../images/gif/c1top.gif",
+"../images/gif/c1down.gif",
+"../images/gif/c1left.gif",
+"../images/gif/c1right.gif",
+"../images/gif/c1hitLeft.gif",
+"../images/gif/c1hitRight.gif",
+"../images/gif/c1standLeft.gif",
+"../images/gif/c1standRight.gif"
 ]
 
 if(storage['characterId'] == 1 )

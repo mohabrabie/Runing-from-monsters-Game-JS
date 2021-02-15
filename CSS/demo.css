@@ -16,13 +16,13 @@ img{
 body{
     background-color: transparent;
     background-size: cover;
-    background-image: url("/images/backgrounds/bg4.jpg");
+   
 }
 /* .bkglvl1{
-    background-image:url("/images/pics/10.jpg");
+    background-image:url("../images/pics/10.jpg");
 }
 .bkglvl2{
-    background-image:url("/images/pics/13.jpg");
+    background-image:url("../images/pics/13.jpg");
 } */
 
 #health, #speed, #monster-health, #timer{
@@ -75,7 +75,7 @@ body{
 
 /* Modal Content/Box */
 .modal-content {
-    background-image: url(/images/pics/9.webp);
+    background-image: url(../images/pics/9.webp);
     background-repeat: no-repeat;
     background-size: cover;
     /* background-color: darkcyan; */
@@ -129,13 +129,44 @@ body{
  #gameBorder{
     border: 5px solid black;
     width: 1300px;
-    height: 400px;
+    height: 490px;
     margin: auto;
-    
-    background-image: url("/images/backgrounds/gameBg3.gif") ;
+   
     background-repeat: no-repeat;
-background-size: 100% 100%;
+    background-size: 100% 100%;
     
+}
+.gameborderBkg1{
+    
+    background-image: url("../images/backgrounds/gameBg1.gif") ;
+}
+.gameBkg1{
+    
+    background-image: url("../images/backgrounds/bg1.jpg") ;
+}
+.gameborderBkg2{
+    
+    background-image: url("../images/backgrounds/gameBg2.gif") ;
+}
+.gameBkg2{
+    
+    background-image: url("../images/backgrounds/bg2.jpg") ;
+}
+.gameborderBkg3{
+    
+    background-image: url("../images/backgrounds/gameBg3.gif") ;
+}
+.gameBkg3{
+    
+    background-image: url("../images/backgrounds/bg3.jpg") ;
+}
+.gameborderBkg4{
+    
+    background-image: url("../images/backgrounds/gameBg4.gif") ;
+}
+.gameBkg4{
+    
+    background-image: url("../images/backgrounds/bg4.jpg") ;
 }
 #gameBar{
     width: 900px;

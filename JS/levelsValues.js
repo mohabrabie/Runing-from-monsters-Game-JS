@@ -50,16 +50,21 @@ function setfoodtime(){
     if(timemin == 0){
             foodtimeappear=10000;  
             foodlvl=5;
-            document.getElementById("mainbody").classList.add('bkglvl1');
-           
+            document.getElementById("mainbody").classList.add('gameBkg1');
+            document.getElementById("gameBorder").classList.add('gameborderBkg1');
+            
 
         }
-        else if(timemin == 1 ){
+        else if(timemin == 2 ){
           flag=1;
             foodtimeappear=8000;
             foodlvl=4;
-            document.getElementById("mainbody").classList.remove('bkglvl1');
-            document.getElementById("mainbody").classList.add('bkglvl2');
+            document.getElementById("mainbody").classList.remove('gameBkg1');
+            document.getElementById("mainbody").classList.add('gameBkg2');
+
+            document.getElementById("gameBorder").classList.remove('gameborderBkg1');
+            document.getElementById("gameBorder").classList.add('gameborderBkg2');
+
 
             
             
@@ -69,15 +74,28 @@ function setfoodtime(){
 
             //     }
         }
-        else if(timemin == 4){
+        else if(timemin == 3){
             flag=2;
             foodtimeappear=6000;
             foodlvl=3;
+
+
+            document.getElementById("mainbody").classList.remove('gameBkg2');
+            document.getElementById("mainbody").classList.add('gameBkg3');
+
+            document.getElementById("gameBorder").classList.remove('gameborderBkg2');
+            document.getElementById("gameBorder").classList.add('gameborderBkg3');
         }
-        else if(timemin == 6 ){
+        else if(timemin == 4 ){
             flag=3;
             foodtimeappear=5000;
             foodlvl=2;
+
+            document.getElementById("mainbody").classList.remove('gameBkg3');
+            document.getElementById("mainbody").classList.add('gameBkg4');
+
+            document.getElementById("gameBorder").classList.remove('gameborderBkg3');
+            document.getElementById("gameBorder").classList.add('gameborderBkg4');
         }
         else{
           flag=4;
@@ -123,5 +141,5 @@ function playeventaudio(theeventnum){
   audioeventSource.play();
 }
 // to change the sound every level
-// time here change every 30 sec 1 min so i use 32000 not 60000 
+// time here change every 30 sec 1 min sos i use 32000 not 60000 
 setInterval(checktimenw, 32000);
