@@ -18,7 +18,7 @@ function myLoop() {
     youlose();
     
 //game over timer 
-  }else if(timemin == 1){
+  }else if(timemin == 6){
     modalText.innerHTML = `<p id="modal-text">You Won!</p><button id="contBtn" onclick="location.href='menu.html'">Continue playing</button>`
     document.getElementById("modal-text").style.color = "green";
     modalText.style.backgroundImage = "url('/images/pics/gh.jpg')";
