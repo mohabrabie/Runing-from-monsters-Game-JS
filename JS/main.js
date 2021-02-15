@@ -71,20 +71,22 @@ document.head.appendChild(importheader);
 
 window.onload = function(){
   document.getElementById('startbtn').click();
+  playeventaudio(7);
+  playaudio(0);
 }
 
 
 let audioSource = document.querySelector("#audio-player");
 let songsList = {
-  background1:"sounds/Forest_birds.wav",
-  background2:"sounds/GHOSTS.wav",
-  Eating:"sounds/Human_Bite_Food.mp3",
-  Hit:"sounds/wallbody_impact.wav",
-  win:"sounds/win.wav",
-  running:"sounds/running.wav",
-  levelUp:"sounds/level-up.wav",
-  Gamestart:"sounds/game-start.ogg",
-  GameOver:"sounds/game-over.wav",
+  background1:"sounds/Forest_birds.wav",//0
+  background2:"sounds/GHOSTS.wav",//1
+  Eating:"sounds/Human_Bite_Food.mp3",//2
+  Hit:"sounds/wallbody_impact.wav",//3
+  win:"sounds/win.wav",//4
+  running:"sounds/running.wav",//5
+  levelUp:"sounds/level-up.wav",//6
+  Gamestart:"sounds/game-start.ogg",//7
+  GameOver:"sounds/game-over.wav",//8
 };
 
 let keys = Object.keys(songsList);
@@ -104,6 +106,7 @@ let keys = Object.keys(songsList);
   setInterval(function(){
       $('#changeround').fadeOut(function(){
           $(this).html(words[i=(i+1)%words.length]).fadeIn();
+          playeventaudio(6);
       });
   }, 60000);
   setInterval(function(){

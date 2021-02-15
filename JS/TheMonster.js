@@ -124,4 +124,17 @@ function getRandomInt(max) {
   return Math.floor(Math.random(0) * Math.floor(max));
 }
 
+// var img;
+// function mosternow(monster){
+//   console.log(helo);
+//   img = document.getElementById(monster.id);
+//   var positions = [
+//       'images/monster/left.gif',
+//       'images/monster/left.gif', 
+ 
+//       ], i = 0;
+//   setInterval(function(){
+//       img.src=positions[i=(i+1)%positions.length]
+//       }, 10000);
 
+// };

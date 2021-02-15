@@ -14,12 +14,15 @@ var foodlvl;
 
 
 function gameOver() {
-  song = songsList[keys[2]];
-  // audioSource.src = song;
-  // audioSource.play();
+  playaudio(4);
   clearInterval(timer);
 }
 
+
+function youlose() {
+  playaudio(8);
+  clearInterval(timer);
+}
 
 
 function updateTimer() {

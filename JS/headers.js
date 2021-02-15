@@ -7,14 +7,15 @@ function myLoop() {
     // speed.innerHTML = `<p class="inner-text">speed: ${character.speed}</p>` ;
     // monsterHealth.innerHTML = `<p class="inner-text">monster: ${monster.health}</p>` ; 
     // timer.innerHTML = `<p class="inner-text">Timer: ${i}</p>`  
-    l++;         
+    // l++;         
     // timeminute=document.getElementById("timmin").innerHTML;       
     myLoop();
          
-  }, 1000) 
+  }, 100) 
   if(character.health <= 0){
-    modalText.innerHTML = `<p id="modal-text">Game Over</p><button id="contBtn">Continue playing</button>`
+    modalText.innerHTML = `<p id="modal-text">Game Over</p><button id="contBtn" onclick="location.href='menu.html'">Continue playing</button>`
     modal.style.display = "block";
+    youlose();
     
 //game over timer 
   }else if(timemin == 1){
