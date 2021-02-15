@@ -41,7 +41,6 @@ function start()
 {  
     timer = setInterval(updateTimer, 1000);
     updateTimer();
-
     playaudio(0);
   
 }
@@ -55,7 +54,7 @@ function setfoodtime(){
             
 
         }
-        else if(timemin == 2 ){
+        else if(timemin == 1 ){
           flag=1;
             foodtimeappear=8000;
             foodlvl=4;
@@ -63,18 +62,14 @@ function setfoodtime(){
             document.getElementById("mainbody").classList.add('gameBkg2');
 
             document.getElementById("gameBorder").classList.remove('gameborderBkg1');
-            document.getElementById("gameBorder").classList.add('gameborderBkg2');
-
-
-            
-            
+            document.getElementById("gameBorder").classList.add('gameborderBkg2');  
             // if ( document.getElementById("mainbody").classList.contains('bkglvl1') )
             //     {
             //         document.getElementById("mainbody").classList.toggle('bkglvl2');
 
             //     }
         }
-        else if(timemin == 3){
+        else if(timemin == 2){
             flag=2;
             foodtimeappear=6000;
             foodlvl=3;
@@ -86,7 +81,7 @@ function setfoodtime(){
             document.getElementById("gameBorder").classList.remove('gameborderBkg2');
             document.getElementById("gameBorder").classList.add('gameborderBkg3');
         }
-        else if(timemin == 4 ){
+        else if(timemin == 3 ){
             flag=3;
             foodtimeappear=5000;
             foodlvl=2;
