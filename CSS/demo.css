@@ -193,7 +193,7 @@ body{
     background-color: rebeccapurple;
     width: fit-content;
     text-align: center;
-    padding: 5px;
+    padding:10px;
     font-size: 15px;
     font-style:italic;
     font-weight: bold;
@@ -205,7 +205,7 @@ body{
     margin: 5px;
 }
 #characterSpeed{
-    width: 100px;
+    /* width: 100px; */
     height: fit-content;
     background-color: royalblue;
     margin: 5px;
@@ -219,7 +219,7 @@ body{
     background-color: rebeccapurple;
     width: fit-content;
     text-align: center;
-    padding: 5px;   
+    padding: 10px;  
     font-size: 15px;
     font-style:italic;
     font-weight: bold;
@@ -231,7 +231,7 @@ body{
     margin: 5px;
 }
 #monsterSpeed{
-    width: 100px;
+    /* width: 100px; */
     height: fit-content;
     background-color: royalblue;
     margin: 5px;
@@ -251,3 +251,28 @@ body{
     background-color: red;
 }
 
+
+#changeround {
+
+    font-size:80px;
+    font-family: 'Erica One', cursive;
+    margin-top: 7%;
+    color:#701350;
+    text-shadow: 0 0 5px #bb7da8, 0 0 25px #f77bc7, 0 0 50px #e497d9,0 0 100px #eca6e9;
+    filter: blur( 0.5 px);
+    /*box-shadow: 0 0 5px #FF3300, 0 0 25px #FF0000, 0 0 50px #FF3300,0 0 100px #FF6600;*/
+    border-top: 2px solid rgb(226, 30, 213);
+    border-bottom: 2px solid #70305a;
+    border-left: 2px solid  #660544;
+    border-right: 2px solid   #cf2293;
+    border-radius:10px;
+    background-color: transparent;
+    text-align: center;
+    margin-left: 34%;
+      width:400px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+
+
+
+  }

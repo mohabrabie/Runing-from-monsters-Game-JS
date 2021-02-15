@@ -6,7 +6,7 @@ onmessage = function(e) {
     var foodCounter=e.data[2];
 
     var foodX = getRandomInt(10,1190);
-    var foodY = getRandomInt(140,400);
+    var foodY = getRandomInt(140,550);
     food.num=foodNum;
     food.x = foodX;
     food.y = foodY;
@@ -19,7 +19,8 @@ onmessage = function(e) {
         clearInterval(food);
     }
      function getRandomInt(min,max) {
-        return Math.floor(Math.random(min) * Math.floor(max));
+        // return Math.floor(Math.random(min) * Math.floor(max));
+        return Math.floor(Math.random() * (max - min + 1) + min);
     }
     postMessage([food,foodNum,foodCounter]);  
 }

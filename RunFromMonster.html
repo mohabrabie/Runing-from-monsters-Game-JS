@@ -47,7 +47,7 @@
             <button type="button" id="startbtn"onclick="start()" style="display: none;">Start Game</button>
         </div>
         <div id="monsterDetails"> 
-            Monster lvl1
+            Monster lvl "<span id="monsterlvl"></span>"
             <div id="monsterHPCover">
                 <div id="monsterHP">
                     HP
@@ -59,9 +59,12 @@
         </div>
 
         </div>
-        <div id="gameBorder" >
-            <img src="/images/gif/standLeft.gif" alt="" width="50px" height="90px" id="player">
+        <div id="gameBorder">
+            <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js?ver=1.4.2'></script>
+            <img src="../images/gif/standLeft.gif" alt="" width="50px" height="90px" id="player">
+            <h1 id="changeround">Round 1</h1>
         </div>
+
 
         
     <div id="myModal" class="modal">

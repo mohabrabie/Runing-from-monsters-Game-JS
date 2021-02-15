@@ -123,3 +123,5 @@ function takeDmg(dmg){
 function getRandomInt(max) {
   return Math.floor(Math.random(0) * Math.floor(max));
 }
+
+

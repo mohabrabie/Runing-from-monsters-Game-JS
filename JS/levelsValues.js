@@ -44,9 +44,13 @@ function start()
     playaudio(0);
   
 }
+
+
+var monster_level=document.getElementById("monsterlvl");
 flag=0;
 function setfoodtime(){
     if(timemin == 0){
+            monster_level.innerHTML="1";
             foodtimeappear=10000;  
             foodlvl=5;
             document.getElementById("mainbody").classList.add('gameBkg1');
@@ -55,7 +59,8 @@ function setfoodtime(){
 
         }
         else if(timemin == 1 ){
-          flag=1;
+          monster_level.innerHTML="2";
+            flag=1;
             foodtimeappear=8000;
             foodlvl=4;
             document.getElementById("mainbody").classList.remove('gameBkg1');
@@ -70,6 +75,7 @@ function setfoodtime(){
             //     }
         }
         else if(timemin == 2){
+          monster_level.innerHTML="3";
             flag=2;
             foodtimeappear=6000;
             foodlvl=3;
@@ -82,6 +88,7 @@ function setfoodtime(){
             document.getElementById("gameBorder").classList.add('gameborderBkg3');
         }
         else if(timemin == 3 ){
+          monster_level.innerHTML="4";
             flag=3;
             foodtimeappear=5000;
             foodlvl=2;
@@ -93,6 +100,7 @@ function setfoodtime(){
             document.getElementById("gameBorder").classList.add('gameborderBkg4');
         }
         else{
+          monster_level.innerHTML="5";
           flag=4;
             foodtimeappear=4000;
             foodlvl=1;

@@ -89,3 +89,24 @@ let songsList = {
 
 let keys = Object.keys(songsList);
 
+(function(){
+  var words = [
+      'Round 1',
+      'Round 2', 
+      'Round 3',
+      'Round 4',
+      'Round 5',
+      'Round 6',
+      'Round 7',
+      'Round 8',
+      'Round 9' 
+      ], i = 0;
+  setInterval(function(){
+      $('#changeround').fadeOut(function(){
+          $(this).html(words[i=(i+1)%words.length]).fadeIn();
+      });
+  }, 60000);
+  setInterval(function(){
+      $('#changeround').fadeOut(2000)});
+    
+})();
