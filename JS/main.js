@@ -79,6 +79,12 @@ let songsList = {
   background1:"sounds/Forest_birds.wav",
   background2:"sounds/GHOSTS.wav",
   Eating:"sounds/Human_Bite_Food.mp3",
+  Hit:"sounds/wallbody_impact.wav",
+  win:"sounds/win.wav",
+  running:"sounds/running.wav",
+  levelUp:"sounds/level-up.wav",
+  Gamestart:"sounds/game-start.ogg",
+  GameOver:"sounds/game-over.wav",
 };
 
 let keys = Object.keys(songsList);

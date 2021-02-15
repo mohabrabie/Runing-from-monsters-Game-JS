@@ -59,7 +59,11 @@ function nextToFood(){
     foodWorker = new Worker("JS/nexttofood.js");
     foodWorker.postMessage([foodListOnMap,character]);
     foodWorker.onmessage= function(event){  
-      foodid=event.data[0]; 
+      foodid=event.data[0];
+      theflag=event.data[3];
+      if(theflag==1){
+        playeventaudio(2);
+      } 
       foodelement =  document.getElementById(foodid);
       if(foodelement != null && foodelement.remove()){
       

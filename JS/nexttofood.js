@@ -23,7 +23,7 @@ onmessage = function(e) {
               if(diffY <=50 && diffY >= -50)
               {
 
-
+                flag=1;
                 character.health+=foodListOnMap[i].num;
                 foodid = ++foodListOnMap[i].idfood ;
                 // foodListOnMap = foodListOnMap.filter((item)=>{
@@ -46,7 +46,7 @@ onmessage = function(e) {
                 // console.log("list",foodListOnMap);
                 // console.log("eat <<< "+foodListOnMap[i].id*3);
                 
-                postMessage([foodid,foodListOnMap,character.health]) ;
+                postMessage([foodid,foodListOnMap,character.health,flag]) ;
              continue;
              
               

@@ -1,3 +1,7 @@
+let audiobkSource = document.querySelector("#audio-Background");
+let audioeventSource = document.querySelector("#audio-Event");
+
+
 var timer; 
 var timesec =0; // seconds
 var timemin =0; // minutes
@@ -7,10 +11,12 @@ var foodtimeappear;
 // // var createfoodtimer=10000;
 var foodlvl;
 
+
+
 function gameOver() {
   song = songsList[keys[2]];
-  audioSource.src = song;
-  audioSource.play();
+  // audioSource.src = song;
+  // audioSource.play();
   clearInterval(timer);
 }
 
@@ -102,9 +108,19 @@ function playaudio(thenum){
   // audioSource.pause();
   song = songsList[keys[thenum]];
   console.log(song);
-  audioSource.src = song;
-  audioSource.load();
-  audioSource.play();
+  audiobkSource.src = song;
+  audiobkSource.load();
+  audiobkSource.play();
+}
+
+
+function playeventaudio(theeventnum){
+  // audioSource.pause();
+  song = songsList[keys[theeventnum]];
+  console.log(song);
+  audioeventSource.src = song;
+  audioeventSource.load();
+  audioeventSource.play();
 }
 // to change the sound every level
 // time here change every 30 sec 1 min so i use 32000 not 60000 
